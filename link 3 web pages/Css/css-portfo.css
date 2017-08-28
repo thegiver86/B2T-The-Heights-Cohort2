@@ -1,0 +1,73 @@
+html { 
+  background: url("../Images/iceberg background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.prof-box{
+	width: 600px;
+	height: 600px;
+	background: rgba(0,0,0,0.4);
+	padding: 50px;
+	color: white;
+	margin: 0 auto;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	text-align: center;
+}
+.prof-pic {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+}
+a{
+	color: white;
+}
+h1 {
+	font-weight: 100;
+	letter-spacing: 6;
+	font-size: 40px;
+}
+
+p{
+	font-weight: 200;
+	letter-spacing: 1;
+}
+.nav{
+	height: 42px;
+	display: inline;
+}
+ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+    article {
+      max-width: 500px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    @media (max-width: 500px) {
+      body { 
+        background: red;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      li {
+        display: block;
+        padding: 5px;
+     }
+    }
+    .social-icon{
+    	font-size: 40px;
+    }
+hr{
+	width: 500px;
+}
