@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//get all numbers from 1-100
+			//if number is divisible by 5 display Buzz
+			//if divisible by 3 display Fizz
+			//if none of the above display the number
+			var i = 1;
+			while(i<=100){
+				if(i % 3 == 0 && i % 5 == 0){
+					console.log('FizzBuzz');
+				}
+				else if (i % 5 == 0){
+					console.log('Buzz');
+				} 
+				else if (i % 3 == 0){
+					console.log('Fizz');
+				}
+				else{
+					console.log(i);
+				}
+				i++;
+			}
+		</script>
+	</body>
+</html>
