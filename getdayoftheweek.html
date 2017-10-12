@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="date"></p>
+	<script type="text/javascript">
+		var text = document.getElementById("date");
+
+switch(new Date().getDay()) {
+  case 0:
+    text.innerHTML = "Welcome! Today is Sunday!";
+    break;
+  case 1:
+    text.innerHTML = "Welcome! Today is Monday!";
+    break;
+  case 2:
+    text.innerHTML = "Welcome! Today is Tuesday!";
+    break;
+  case 3:
+    text.innerHTML = "Welcome! Today is Wednesday!";
+    break;
+  case 4:
+    text.innerHTML = "Welcome! Today is Thursday!";
+    break;
+  case 5:
+    text.innerHTML = "Welcome! Today is Friday!";
+    break;
+  case 6:
+    text.innerHTML = "Welcome! Today is Saturday!";
+    break;
+}
+    
+	</script>
+
+</body>
+</html>
