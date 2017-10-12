@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table, td, th {
+    	border: 1px solid black;
+		padding: 1px;
+		margin-left:auto; 
+		margin-right:auto;
+		color: white;
+		border-radius:25px;
+		padding: 10px;
+
+}
+			body{
+		margin: auto;
+		color: black;
+		text-align: center;
+		font-size: 30px;
+}
+		html{
+	background-image: url('https://media.giphy.com/media/uGVCFjsIJldYs/giphy.gif');
+	background-size: cover;
+	text-align: center;
+	color: black;
+	font-size: 25px;
+}
+	h3{
+		font-size: 55px;
+		@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+     animation-duration: 4s;
+}
+	}
+	
+		</style>
+		
+		<script>
+			var custArray = []; // An Array of Customer's in Queue
+			var pos = 0;  // The position of the customer in queue/the amount of people in queue
+
+			function addCustomer() {
+				if (pos == 0) { // If no one is in queue, delete the first row "No customers on line"
+					document.getElementById("custTable").deleteRow(1);
+				}
+    				var table = document.getElementById("custTable"); // Reference table
+					var custName = document.getElementById("custName"); // Reference customer name text field
+					var custOrder = document.getElementById("custOrder");  // Reference customer order text field
+					custArray.push({name: custName.value, order: custOrder.value}); // Adds an object with the customer's info into the array
+					++pos; // Increment position value by 1 
+			    	var row = table.insertRow(table.rows.length); // Inserts a new row into the table
+    				var cell1 = row.insertCell(0); // First segment of the row
+    				var cell2 = row.insertCell(1); // Second segment of the row
+					var cell3 = row.insertCell(2); // Third segment of the row
+			    	cell1.innerHTML = pos; // Prints the current position into the first segment of the new row
+			    	cell2.innerHTML = custName.value;  // Prints the value entered from the customer name text field into second segment 
+					cell3.innerHTML = custOrder.value; // Prints the value entered from the customer order text field into the third segment
+}
+				}
+
+			function customerServed() {
+			    if (pos > 0) { // If there are people still in the queue, delete the firsr row
+					document.getElementById("custTable").deleteRow(1);
+			    }
+				if (pos > 0) { // Subtracts 1 from the position if there are still any people in the queue
+					pos -= 1;
+				}
+				for (i = 1; i <= pos; i++) { // Updates all position values in the table after a row is deleted 
+					document.getElementById("custTable").rows[i].cells[0].innerHTML = i;
+				}
+					document.getElementById("serveMsg").innerHTML = custArray[0].name + " has been served their " + custArray[0].order;  // A message is printed to display that the customer has been served
+					custArray.shift();  // removes the first element from the customer array
+				if (pos == 0) { // If there is no one in the queue, add a row to display that there are "No customers on line"
+					var tempTable = document.getElementById("custTable");
+					row = tempTable.insertRow(1);
+					cellOne = row.insertCell(0);
+					cellOne.colSpan = 3;  // defines the amount of columns that the cell should span 
+					cellOne.innerHTML = "No customers on line";
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<h3>Baloo's Bear necessities</h3>
+		Customer's Name: <input type="text" id="custName"><br>
+		Customer's Order: <input type="text" id="custOrder"><br>
+		<br>
+		<button onclick="addCustomer()">Add Customer</button>
+		<button onclick="customerServed()">Customer Served</button>
+		<br><br>
+		<p id="serveMsg"></p>
+		<table id="custTable" border="1">
+  		<tr>
+				<td><b>POS.</b></td>
+				<td><b>NAME</b></td>
+				<td><b>ORDER</b></td>
+			</tr>
+			<tr>
+				<td colspan="3">No customers on line</td>
+			</tr>
+		</table>
+		<br>
+	</div>
+</body>
+</html>
